@@ -65,6 +65,7 @@ public class Hypixel {
         String name;
         long oldLoginTime = 0;
         long oldLogoutTime = 0;
+        String oldLastGameMode = "";
 
         /**
          * Creates a Player object
@@ -114,6 +115,16 @@ public class Hypixel {
             Date d = new Date();
             d.setTime(lli);
             return d;
+        }
+
+        public String getLastGameMode(){
+            String _JSONData = JSONData.substring(JSONData.indexOf("\"mostRecentGameType\":") + "\"mostRecentGameType\":".length());
+            try{
+                _JSONData = _JSONData.substring(0, _JSONData.indexOf(","));
+            } catch (IndexOutOfBoundsException e) {
+                _JSONData = _JSONData.replace("}", "");
+            }
+            return _JSONData.replace("\"", "");
         }
     }
 
