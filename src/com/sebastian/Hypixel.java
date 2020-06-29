@@ -115,6 +115,16 @@ public class Hypixel {
             d.setTime(lli);
             return d;
         }
+
+        public String getLastGameMode(){
+            String _JSONData = JSONData.substring(JSONData.indexOf("\"mostRecentGameType\":") + "\"mostRecentGameType\":".length());
+            try{
+                _JSONData = _JSONData.substring(0, _JSONData.indexOf(","));
+            } catch (IndexOutOfBoundsException e) {
+                _JSONData = _JSONData.replace("}", "");
+            }
+            return _JSONData.replace("\"", "");
+        }
     }
 
 }
