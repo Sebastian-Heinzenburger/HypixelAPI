@@ -65,6 +65,7 @@ public class Hypixel {
         String name;
         long oldLoginTime = 0;
         long oldLogoutTime = 0;
+        String oldLastGameMode = "";
 
         /**
          * Creates a Player object
