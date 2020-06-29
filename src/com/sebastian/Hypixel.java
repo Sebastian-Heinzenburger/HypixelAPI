@@ -107,8 +107,8 @@ public class Hypixel {
         }
 
         /**
-         * returns a Date with the last logout
-         * @return  Date holding the last logout timestamp
+         * returns a Date with the last logout.
+         * @return  Date holding the last logout timestamp.
          */
         public Date getLastLogout() {
             long lli = getLastLogoutTimeStamp();
@@ -117,6 +117,10 @@ public class Hypixel {
             return d;
         }
 
+        /**
+         * returns a String with the last GameMode.
+         * @return  String holding the last GameMode.
+         */
         public String getLastGameMode(){
             String _JSONData = JSONData.substring(JSONData.indexOf("\"mostRecentGameType\":") + "\"mostRecentGameType\":".length());
             try{
@@ -124,6 +128,16 @@ public class Hypixel {
             } catch (IndexOutOfBoundsException e) {
                 _JSONData = _JSONData.replace("}", "");
             }
+            return _JSONData.replace("\"", "");
+        }
+
+        /**
+         * returns a String with the players Minecraft version.
+         * @return  String holding the players Minecraft version.
+         */
+        public String getMCVersion(){
+            String _JSONData = JSONData.substring(JSONData.indexOf("\"mcVersionRp\":") + "\"mcVersionRp\":".length());
+            _JSONData = _JSONData.substring(0, _JSONData.indexOf(","));
             return _JSONData.replace("\"", "");
         }
     }
