@@ -1,6 +1,6 @@
 # Documentation
 
-# `public class Hypixel`
+## `public class Hypixel`
 
  * **Author:** Sebastian Heinzenburger <Sebastian.Heinzenburger @ gmail.com>
  * **Version:** 1.0
@@ -19,7 +19,7 @@ Sets the Player object's JSONData to the JSONData returned by the server.
 
  * **Parameters:** `player` — the PLayer object to update
 
-# `public static class Player`
+## `public static class Player`
 
  * **Author:** Sebastian Heinzenburger <Sebastian.Heinzenburger @ gmail.com>
  * **Version:** 1.0
@@ -51,6 +51,18 @@ returns a Date with the last login
 
 ## `public Date getLastLogout()`
 
-returns a Date with the last logout
+returns a Date with the last logout.
 
- * **Returns:** Date holding the last logout timestamp
+ * **Returns:** Date holding the last logout timestamp.
+
+## `public String getLastGameMode()`
+
+returns a String with the last GameMode.
+
+ * **Returns:** String holding the last GameMode.
+
+## `public String getMCVersion()`
+
+returns a String with the players Minecraft version.
+
+ * **Returns:** String holding the players Minecraft version.
